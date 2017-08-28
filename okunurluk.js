@@ -9,7 +9,7 @@ $(document).ready(function(){
 		var ss = dene(isim,i);
 		alert(ss);
 	})
-	
+	// ########## BİR'DEN FAZLA KELİME İÇİN BURASI ###########
 	function dene(isi,sai){
 		$("#icerik > div").each(function(i){
 			if(sai === 0){
@@ -28,7 +28,7 @@ $(document).ready(function(){
 	            
 		});
 	}
-	/*
+	/* ########## TEK KELİME İÇİN BURASI ###########
 	$("#icerik > div").each(function(i){
 		var t = $(this).text(),
 			ara = t.indexOf(keli);
@@ -46,7 +46,6 @@ $(document).ready(function(){
           , orta =t.substring(t.indexOf(k),t.indexOf(k) + k.length)
           , o = t.substring(t.indexOf(k) + k.length, t.length)
           , i = bas + "<span class='farkli'>" + orta + "</span>" + o;
-        //alert(t.indexOf(k));
         return i;
         
     }

@@ -1,17 +1,4 @@
 $(document).ready(function(){
-	var kelime = [
-		["Da Gouzi", "#e99002"],
-		["Chen Zhiguang", "#48c4c2"],
-		["Yue Zhong", "#f10b7e"],
-		["Yue", "#f10b7e"]
-	];
-	
-	$("#icerik").each(function () {
-		var t = $(this).html();
-		var sset = sese(kelime,t);
-		$(this).html(sset);
-	});
-	
 	function sese(k_list, t) {
 		var icerik_cek = t;
 		var sur = "";

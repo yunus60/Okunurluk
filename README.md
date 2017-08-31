@@ -1,6 +1,6 @@
 Herhangi bir yazının içerisinde belirlediğimiz kelimelerin ön plana çıkmasını sağlayan zımbırtı.
 
-Örnek Kullanım \n
+Örnek Kullanım 
 	var kelime = [
 		["Da Gouzi", "#e99002"],
 		["Chen Zhiguang", "#48c4c2"],

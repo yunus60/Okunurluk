@@ -1,52 +1,37 @@
 $(document).ready(function(){
-	var keli = "Zhao Feng";
+	var kelime = [
+		["Da Gouzi", "#e99002"],
+		["Chen Zhiguang", "#48c4c2"],
+		["Yue Zhong", "#f10b7e"],
+		["Yue", "#f10b7e"]
+	];
 	
-	var isim_listesi = ["Qin","Zhao"];
-	
-	isim_listesi.forEach(function(isim,i){
-		
-		alert(isim + " " + i + " bitti");
-		var ss = dene(isim,i);
-		alert(ss);
-	})
-	// ########## BİR'DEN FAZLA KELİME İÇİN BURASI ###########
-	function dene(isi,sai){
-		$("#icerik > div").each(function(i){
-			if(sai === 0){
-				var t = $(this).text(),
-				ara = t.indexOf(isi);
-				if(ara != -1){
-					var qe = $(this).html(e_k(t,isi));
-					var ge = qe.text();
-					return ge;
-				}
-			}
-			if(sai === 1){
-				alert(qe.html())
-			}
-			
-	            
-		});
-	}
-	/* ########## TEK KELİME İÇİN BURASI ###########
-	$("#icerik > div").each(function(i){
-		var t = $(this).text(),
-			ara = t.indexOf(keli);
-			if(ara != -1){
-				
-				$(this).html(e_k(t,keli))
-			}
-            
+	$("#icerik").each(function () {
+		var t = $(this).html();
+		var sset = sese(kelime,t);
+		$(this).html(sset);
 	});
-	*/
-	function e_k(kelime,isim) {
-        var t = kelime
-          , k = isim
-          , bas =t.substring(0,t.indexOf(k))
-          , orta =t.substring(t.indexOf(k),t.indexOf(k) + k.length)
-          , o = t.substring(t.indexOf(k) + k.length, t.length)
-          , i = bas + "<span class='farkli'>" + orta + "</span>" + o;
-        return i;
-        
-    }
+	
+	function sese(k_list, t) {
+		var icerik_cek = t;
+		var sur = "";
+		var renk_ka = "</span>";
+		k_list.forEach(function (x, y) {
+			var isi = x[0];
+			var renk = x[1];
+			var r_isi = new RegExp(isi, 'g');
+			var renkli =
+				"<span class='farkli' style='color:" + renk +
+				";'>";
+			if (y === 0) {
+				sur = icerik_cek.replace(r_isi,
+					renkli + isi + renk_ka);
+			}
+			else {
+				sur = sur.replace(r_isi, renkli +
+					isi + renk_ka);
+			}
+		});
+		return sur;
+	}
 })

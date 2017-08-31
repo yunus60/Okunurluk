@@ -2,7 +2,7 @@ Herhangi bir yazının içerisinde belirlediğimiz kelimelerin ön plana çıkma
 
 ###Örnek Kullanım
 ===
----
+
 ```
 var kelime = [
 		["Da Gouzi", "#e99002"],
